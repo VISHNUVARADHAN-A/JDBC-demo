@@ -9,8 +9,6 @@ public class sampleSelect {
 			// 1. Get a connection to database
 			myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "dummy" , "Dknight1!");
 			
-			System.out.println("Database connection successful!\n");
-			
 			// 2. Create a statement
 			myStmt = myConn.createStatement();
 			
@@ -39,4 +37,5 @@ public class sampleSelect {
 			}
 		}
     }
+
 }
