@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class ResultSet {
+public class Resultsetdemo {
 	public static void main(String[] args) throws SQLException {
 		Connection myConn = null;
 		Statement myStmt = null;
