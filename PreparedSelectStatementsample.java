@@ -1,14 +1,17 @@
 
 import java.sql.*;
 
-public class PreparedSelectStatementcopy {
+public class PreparedSelectStatementsample {
         public static void main(String[] args) throws SQLException {
         Connection myConn = null;
         PreparedStatement myStmt = null;
         ResultSet myRs = null;
         try {
             // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "dummy", "Dknight1!");
+            String password = System.getenv("DB_PASSWORD");
+            String Let_JDBC_url = System.getenv("DB_URL");
+            String Let_JDBC_user = System.getenv("DB_USER");
+            myConn = DriverManager.getConnection(Let_JDBC_url, Let_JDBC_user, password);
             // 2. Create a statement
             myStmt = myConn.prepareStatement(("select * from employees where salary>? and department=?"));  
             // 3. pass valuse to perpare Statement

@@ -8,7 +8,10 @@ public class PreparedInsertStatement {
         ResultSet myRs = null;
         try {
             // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "dummy", "Dknight1!");
+                        String password = System.getenv("DB_PASSWORD");
+            String Let_JDBC_url = System.getenv("DB_URL");
+            String Let_JDBC_user = System.getenv("DB_USER");
+            myConn = DriverManager.getConnection(Let_JDBC_url, Let_JDBC_user, password);
             // 2. Create a prepared statement
             myStmt = myConn.prepareStatement("insert into employees (last_name, first_name, email, department,salary)"
                 +"values (?,?,?,?,?)" );
